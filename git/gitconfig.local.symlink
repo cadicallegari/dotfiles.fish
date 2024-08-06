@@ -18,7 +18,7 @@
 	ui = true
 [core]
 	excludesfile = ~/.gitignore
-	editor = vim
+	editor = nvim
 	compression = -1
 	autocrlf = input
 	whitespace = trailing-space,space-before-tab
@@ -50,7 +50,7 @@
 [pull]
     ff = only
 [init]
-    defaultBranch = main
+    defaultBranch = master
 [format]
 	signOff = true
 [diff]

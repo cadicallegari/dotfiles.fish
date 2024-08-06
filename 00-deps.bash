@@ -8,3 +8,6 @@ brew install visual-studio-code
 brew install bitwarden
 brew install slack
 brew install htop
+brew install menumeters
+brew install alt-tab
+brew install raycast
