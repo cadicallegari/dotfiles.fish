@@ -1,16 +1,10 @@
-# vi: ft=gitconfig
-
 [alias]
-	co = checkout
 	count = shortlog -sn
-	g = grep --break --heading --line-number
-	gi = grep --break --heading --line-number -i
-	changed = show --pretty=\"format:\" --name-only
-	fm = fetch-merge
-	please = push --force-with-lease
-	commit = commit -s
-	commend = commit -s --amend --no-edit
-	lt = log --tags --decorate --simplify-by-decoration --oneline
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [color]
 	diff = auto
 	status = auto
@@ -23,6 +17,7 @@
 	autocrlf = input
 	whitespace = trailing-space,space-before-tab
 	precomposeunicode = true
+	pager = delta
 [advice]
 	addEmptyPathspec = false
 [gpg]
@@ -32,7 +27,7 @@
 [help]
 	autocorrect = 1
 [diff]
-	tool = diffmerge
+	tool = delta
 [grep]
 	extendRegexp = true
 	lineNumber = true
@@ -53,8 +48,6 @@
     defaultBranch = master
 [format]
 	signOff = true
-[diff]
-    tool = nvimdiff
 [difftool "nvimdiff"]
     cmd = nvim -d "$LOCAL" "$REMOTE"
 [merge]
@@ -62,8 +55,18 @@
 [mergetool "nvimmerge"]
     cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 
-[url "git@github.com:"]
-    insteadOf = https://github.com/
-[url "git@gitlab.com:"]
-    insteadOf = https://gitlab.com/
+[delta]
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    syntax-theme = Monokai Extended
+    navigate = true
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
 
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+
+[interactive]
+    diffFilter = delta --color-only
