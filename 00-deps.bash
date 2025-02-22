@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 brew install fish
-brew install gcr
+brew install grc
 brew install nvim
 brew install fzf && fzf --fish | source
 brew install visual-studio-code
