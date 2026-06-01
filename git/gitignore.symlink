@@ -14,3 +14,10 @@
 dump.rdb
 main.tfvars
 coverage.out
+
+.planning/
+**/.test-payloads/
+**/.claude/settings.local.json
+.superpowers/
+.opencode/
+CLAUDE.local.md
