@@ -106,6 +106,8 @@ function install_dotfiles
 		or abort kitty
 	link_file $DOTFILES_ROOT/nvim/config $HOME/.config/nvim backup
 		or abort nvim
+	link_file $DOTFILES_ROOT/claude/CLAUDE.md $HOME/.claude/CLAUDE.md backup
+		or abort claude
 	link_file $DOTFILES_ROOT/yamllint/config $HOME/.config/yamllint/config backup
 		or abort yamllint
 end
